@@ -60,5 +60,6 @@ Prerendered stylesheets from colocated styles for om.next
     (om-style 
       :root-class 'project.some-component/SomeComponent
       :root-style 'project.styles/base ;; global stuff like typography, resets, etc...
-      :output-to "css/styles.css")))
+      :output-to "css/styles.css")
+    (cljs :optimizations :none)))
 ```
