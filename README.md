@@ -1,5 +1,5 @@
 # om-style
-Prerendered stylesheets from colocated styles for om.next
+A lightweight colocated style lib similar to om-css, focused on server-side prerendering of styles. It comes with a boot task and a protocol to be added to any om.next class.
 
 [![Clojars Project](https://img.shields.io/clojars/v/om-style.svg)](https://clojars.org/om-style)
 
