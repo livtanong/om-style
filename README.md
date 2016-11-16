@@ -16,4 +16,26 @@ Prerendered stylesheets from colocated styles for om.next
 ```
 
 ## Usage
-TODO
+```clj
+;; some_component.cljc
+(ns project.some-component
+  (:require
+    [om.next :as om :refer [defui]]
+    [om-style :as os]))
+
+(defui SomeComponent
+  #?(:clj static)
+  #?(:clj os/Style)
+  #?(:clj
+    (style [this]
+      (list
+        [:.some-class {:color "red"}]
+        [:.other-class {:font-weight 300}
+          [:a {:text-decoration 'none}]]))
+
+  Object
+  (render [this]
+    (dom/div {:className "some-class"}
+      (dom/div {:className "other-class"}
+        (dom/a {:href "#"} "How Stylish")))))
+```
