@@ -1,5 +1,6 @@
 # om-style
-A lightweight colocated style lib similar to om-css, focused on server-side prerendering of styles. It comes with a boot task and a protocol to be added to any om.next class.
+A lightweight library for server-side prerendering of colocated om.next styles.
+It comes with a boot task and a protocol to be added to any om.next class.
 
 [![Clojars Project](https://img.shields.io/clojars/v/om-style.svg)](https://clojars.org/om-style)
 
@@ -9,6 +10,11 @@ A lightweight colocated style lib similar to om-css, focused on server-side prer
 
 ## Future
 - namespaced, "locally scoped" classes
+
+## Prior art
+Inspiration taken from the following, but using a completely different approach.
+- ladderlife's om-css https://github.com/ladderlife/om-css
+- untangled's om-css https://github.com/untangled-web/om-css
 
 ## Installation
 ```
