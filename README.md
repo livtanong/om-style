@@ -33,6 +33,7 @@ Prerendered stylesheets from colocated styles for om.next
   #?(:clj
     (style [this]
       (list
+        ;; Styles compose upwards to the root component just like queries.
         (os/get-style other/OtherComponent)
         [:.some-class {:color "red"}]
         [:.other-class {:font-weight 300}
