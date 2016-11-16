@@ -1,6 +1,6 @@
 # om-style
-A lightweight library for server-side prerendering of colocated om.next styles.
-It comes with a boot task and a protocol to be added to any om.next class.
+A lightweight library for server-side prerendering of colocated [om.next](https://github.com/omcljs/om) [garden](https://github.com/noprompt/garden/) styles.
+It comes with a [boot](https://github.com/boot-clj/boot) task and a protocol to be added to any om.next class.
 
 [![Clojars Project](https://img.shields.io/clojars/v/om-style.svg)](https://clojars.org/om-style)
 
