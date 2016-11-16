@@ -2,7 +2,6 @@
 
 (set-env!
   :source-paths #{"src"}
-  :resource-paths #{"resources"}
   :dependencies
   '[[org.clojure/clojure         "1.9.0-alpha14"  :scope "provided"]
     [org.clojure/clojurescript   "1.9.293"        :scope "provided"]
@@ -30,7 +29,7 @@
   '[adzerk.boot-cljs-repl :as cr :refer [cljs-repl start-repl]]
   '[adzerk.boot-reload    :refer [reload]]
   '[adzerk.boot-test :as bt-clj]
-  '[adzerk.bootlaces      :refer [bootlaces! push-release push-snapshot]]
+  '[adzerk.bootlaces :as bootlaces :refer [bootlaces! push-release push-snapshot]]
   '[clojure.tools.namespace.repl :as repl]
   '[crisptrutski.boot-cljs-test :as bt-cljs]
   '[pandeiro.boot-http :refer [serve]]
@@ -46,6 +45,10 @@
        :scm {:url "https://github.com/levitanong/om-style"}
        :license {"name" "MIT License"
                  "url" "https://opensource.org/licenses/MIT"}})
+
+(deftask build-jar []
+  (set-env! :resource-paths #{"src"})
+  (bootlaces/build-jar))
 
 (deftask devcards []
   (set-env! :source-paths #(conj % "src/devcards"))
