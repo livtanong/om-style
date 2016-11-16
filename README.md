@@ -1,4 +1,4 @@
-# stylish-om
+# om-style
 Prerendered stylesheets from colocated styles for om.next
 
 ## Features
