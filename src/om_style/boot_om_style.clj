@@ -49,7 +49,7 @@ colocated styles of a root om.next class"
                             resolve
                             var-get
                             os/get-style))
-              base-style (when (resolve base-style)
+              base-style (when (and base-style (resolve base-style))
                            (-> base-style resolve var-get))]
           (pod/with-eval-in garden-pod
             (garden.core/css
