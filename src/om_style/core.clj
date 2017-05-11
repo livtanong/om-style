@@ -2,7 +2,7 @@
   (:require
    [om.next :as om]))
 
-(defprotocol Style
+(defprotocol IStyle
   (style [this]))
 
 (defn get-style
