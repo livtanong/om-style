@@ -12,4 +12,6 @@
   #?(:clj (let [ctor (if (om/component? x)
                        (om/react-type x) x)]
             (when-let [style (:style (meta ctor))]
-              (with-meta (style ctor) {:component ctor})))))
+              (with-meta (style ctor) {:component ctor})))
+     :cljs (when (implements? IStyle x)
+             (style x))))
