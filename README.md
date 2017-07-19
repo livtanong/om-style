@@ -18,7 +18,7 @@ Inspiration taken from the following, but using a completely different approach.
 
 ## Installation
 ```
-[om-style "0.0.1"]
+[om-style "0.0.2"]
 ```
 
 ## Usage
@@ -34,17 +34,16 @@ Inspiration taken from the following, but using a completely different approach.
 ;; We keep the om-style interface in clj mode because:
 ;; 1. We only need the clj part to generate the stylesheet
 ;; 2. We want to keep the cljs file size low. 
-  #?(:clj static)
-  #?(:clj os/Style)
-  #?(:clj
+  #?@
+  (:clj
+   [static os/IStyle
     (style [this]
-      (list
-        ;; Styles compose upwards to the root component just like queries.
-        (os/get-style other/OtherComponent)
-        [:.some-class {:color "red"}]
-        [:.other-class {:font-weight 300}
-          [:a {:text-decoration 'none}]]))
-
+     (list
+       ;; Styles compose upwards to the root component just like queries.
+       (os/get-style other/OtherComponent)
+       [:.some-class {:color "red"}]
+       [:.other-class {:font-weight 300}
+         [:a {:text-decoration 'none}]])
   Object
   (render [this]
     (dom/div {:className "some-class"}
