@@ -1,11 +1,10 @@
-(def +version+ "0.0.2")
+(def +version+ "0.1.0")
 
 (set-env!
   :source-paths #{"src"}
   :dependencies
-  '[[org.clojure/clojure         "1.9.0-alpha14"  :scope "provided"]
-    [org.clojure/clojurescript   "1.9.293"        :scope "provided"]
-    [org.omcljs/om               "1.0.0-alpha47"  :scope "provided"
+  '[[org.clojure/clojure         "1.9.0-alpha17"  :scope "provided"]
+    [org.omcljs/om               "1.0.0-beta1"  #_:scope #_"provided"
      :exclusions [cljsjs/react]]
 
     [com.cemerick/piggieback     "0.2.1"          :scope "test"]
@@ -35,10 +34,10 @@
   '[pandeiro.boot-http :refer [serve]]
   '[codox.boot :refer [codox]])
 
-(bootlaces! +version+ :dont-modify-paths? true)
+(bootlaces! +version+)
 
 (task-options!
-  pom {:project 'om-style
+  pom {:project 'com.levitanong/om-style
        :version +version+
        :description "Prerendered stylesheets from colocated styles for om.next"
        :url "https://github.com/levitanong/om-style"
@@ -47,7 +46,6 @@
                  "url" "https://opensource.org/licenses/MIT"}})
 
 (deftask build-jar []
-  (set-env! :resource-paths #{"src"})
   (bootlaces/build-jar))
 
 (deftask devcards []
